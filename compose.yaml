@@ -1,0 +1,21 @@
+services:
+  smena:
+    build: .
+    ports:
+      - '127.0.0.1:8000:8000'
+    volumes:
+      - diary:/app/var
+    environment:
+      ARQA_DB_PATH: /app/var/arqa.sqlite3
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      OPENAI_MODEL: ${OPENAI_MODEL:-}
+    # Import is idempotent. The official October 1 example stays unchanged.
+    command:
+      - /bin/sh
+      - -c
+      - >-
+        python -m app.import_data /app/data/trips.json &&
+        python -m app.import_data /app/data/demo-trips.json &&
+        exec python -m uvicorn app.main:app --host 0.0.0.0 --port 8000
+volumes:
+  diary:

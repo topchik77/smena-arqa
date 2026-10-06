@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <base href="$FLUTTER_BASE_HREF">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Смена — дневник водителя. Поездки, комиссия и понятный итог дня.">
+  <meta name="theme-color" content="#F4F3EB">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Смена">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="manifest" href="manifest.json">
+  <title>Смена · Дневник водителя</title>
+  <style>
+    html, body { margin: 0; background: #F4F3EB; color: #1B211D; }
+    .boot { position: fixed; inset: 0; display: grid; place-content: center; text-align: center; font: 16px system-ui, sans-serif; gap: 14px; }
+    .boot strong { font-size: 32px; letter-spacing: -1px; }
+    .boot span { color: #596258; }
+  </style>
+</head>
+<body>
+  <div class="boot" aria-live="polite"><strong>Смена /</strong><span>Открываем дневник…</span></div>
+  <noscript>Для работы дневника включите JavaScript.</noscript>
+  <script>
+    window.addEventListener('flutter-first-frame', function () {
+      document.querySelector('.boot')?.remove();
+    });
+  </script>
+  <script src="flutter_bootstrap.js" async></script>
+</body>
+</html>

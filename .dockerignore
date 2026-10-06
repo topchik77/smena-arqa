@@ -1,0 +1,16 @@
+.git
+.tools
+.runtime
+var
+dist
+**/.venv
+**/__pycache__
+**/.pytest_cache
+**/.ruff_cache
+**/*.db*
+**/.env
+client/build
+client/.dart_tool
+client/android/.gradle
+client/android/local.properties
+docs/screenshots

@@ -1,0 +1,16 @@
+[
+  {"id":"demo-02-1","start":"2026-10-02T08:05:00+05:00","end":"2026-10-02T08:31:00+05:00","amount":2800,"payment":"card","commission":420},
+  {"id":"demo-02-2","start":"2026-10-02T09:10:00+05:00","end":"2026-10-02T09:27:00+05:00","amount":1750,"payment":"cash","commission":262.50},
+  {"id":"demo-02-3","start":"2026-10-02T10:02:00+05:00","end":"2026-10-02T10:38:00+05:00","amount":3450,"payment":"card","commission":517.50},
+  {"id":"demo-05-1","start":"2026-10-05T07:40:00+05:00","end":"2026-10-05T08:08:00+05:00","amount":3100,"payment":"card","commission":465},
+  {"id":"demo-05-2","start":"2026-10-05T08:35:00+05:00","end":"2026-10-05T08:53:00+05:00","amount":1800,"payment":"cash","commission":270},
+  {"id":"demo-05-3","start":"2026-10-05T09:15:00+05:00","end":"2026-10-05T09:47:00+05:00","amount":3200,"payment":"card","commission":480},
+  {"id":"demo-05-4","start":"2026-10-05T10:20:00+05:00","end":"2026-10-05T10:44:00+05:00","amount":2600,"payment":"card","commission":390},
+  {"id":"demo-05-5","start":"2026-10-05T11:12:00+05:00","end":"2026-10-05T11:26:00+05:00","amount":1500,"payment":"cash","commission":225},
+  {"id":"demo-06-1","start":"2026-10-06T07:45:00+05:00","end":"2026-10-06T08:11:00+05:00","amount":2800,"payment":"card","commission":420},
+  {"id":"demo-06-2","start":"2026-10-06T08:32:00+05:00","end":"2026-10-06T08:49:00+05:00","amount":1750,"payment":"cash","commission":262.50},
+  {"id":"demo-06-3","start":"2026-10-06T09:10:00+05:00","end":"2026-10-06T09:44:00+05:00","amount":3600,"payment":"card","commission":540},
+  {"id":"demo-06-4","start":"2026-10-06T10:08:00+05:00","end":"2026-10-06T10:27:00+05:00","amount":2100,"payment":"cash","commission":315},
+  {"id":"demo-06-5","start":"2026-10-06T10:50:00+05:00","end":"2026-10-06T11:16:00+05:00","amount":2950,"payment":"card","commission":442.50},
+  {"id":"demo-06-6","start":"2026-10-06T11:38:00+05:00","end":"2026-10-06T12:05:00+05:00","amount":3200,"payment":"card","commission":480}
+]
