@@ -38,12 +38,15 @@
 
 Снимки: [сравнение дней на мобильном экране](screenshots/day-comparison.jpg), [desktop](screenshots/desktop.jpg), [mobile](screenshots/mobile.jpg), [официальный пример](screenshots/official-example.jpg), [проверочная запись](screenshots/saved-trip.jpg), [состояние ошибки](screenshots/connection-error.jpg).
 
+## Публикация и облачные проверки
+
+- **Репозиторий:** [topchik77/smena-arqa](https://github.com/topchik77/smena-arqa), публичный; README и скриншоты доступны без авторизации.
+- **GitHub Actions:** [успешный облачный запуск](https://github.com/topchik77/smena-arqa/actions/runs/37591338032) от 7 октября 2026. Ruff, 86 тестов backend, форматирование Dart, Flutter analyzer, 13 тестов клиента, Web и APK — успешно. Сборки доступны в артефакте `smena-demo` этого запуска.
+
 ## Что не подтверждено
 
 - **Физический Android-телефон:** устройств в `adb devices` нет. APK собран и подписан, но установка и работа на настоящем телефоне требуют отдельного прогона. Не выдаём браузерный мобильный размер за тест на устройстве.
 - **Docker-сборка:** Docker Desktop установлен, но Linux Engine не запущен. Конфигурация проверена статически; контейнерная сборка и запуск ещё не выполнены.
 - **Живая модель:** ключ и модель не предоставлены. Responses API проверен mock-тестами; платных внешних вызовов не было.
-- **GitHub Actions:** [первый облачный запуск](https://github.com/topchik77/smena-arqa/actions/runs/37591338032). Backend прошёл; клиентская сборка выполняется. Актуальный результат доступен по ссылке.
-- **Публичный репозиторий:** [topchik77/smena-arqa](https://github.com/topchik77/smena-arqa), опубликован 7 октября 2026. README и скриншоты доступны без авторизации.
 
 Всё перечисленное отдельно от успешно выполненных локальных проверок. Инструкции для телефона и публикации собственной сборки приведены в README.

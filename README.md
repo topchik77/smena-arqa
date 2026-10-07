@@ -86,7 +86,7 @@ flutter analyze
 flutter test
 ```
 
-**Локально проходят 86 тестов backend и 13 тестов Flutter**, Ruff и Flutter analyzer — без замечаний. Web и APK собраны. [GitHub Actions](https://github.com/topchik77/smena-arqa/actions) запускает проверки и сборку на push/PR; статус конкретного прогона виден там же. Actions не является хостингом API. Подробный [отчёт проверок](docs/VERIFICATION.md).
+**86 тестов backend и 13 тестов Flutter проходят локально и на GitHub Actions.** Ruff и Flutter analyzer — без замечаний; Web и APK собраны в [облачном прогоне](https://github.com/topchik77/smena-arqa/actions/runs/37591338032). [GitHub Actions](https://github.com/topchik77/smena-arqa/actions) запускает проверки и сборку на push/PR; статус конкретного прогона виден там же. Actions не является хостингом API. Подробный [отчёт проверок](docs/VERIFICATION.md).
 
 ## Решения, влияющие на корректность
 
