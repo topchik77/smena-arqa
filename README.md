@@ -1,5 +1,7 @@
 # Смена — дневник поездок водителя
 
+[![Проверки и сборка](https://github.com/topchik77/smena-arqa/actions/workflows/checks.yml/badge.svg)](https://github.com/topchik77/smena-arqa/actions/workflows/checks.yml)
+
 Тестовое задание [arqa](https://jobs.arqa.cc/). **Flutter · FastAPI · SQLite**.
 
 Выбор дня, список поездок, сводка и добавление поездки. Данные сохраняются на сервере; повтор отправки не создаёт дубль. Веб-клиент работает на компьютере и телефоне, также собирается Android APK.
@@ -7,9 +9,9 @@
 ![Дневник поездок на компьютере](docs/screenshots/desktop.jpg)
 
 <p>
-  <img src="docs/screenshots/mobile.jpg" width="280" alt="Сводка на телефоне">
-  <img src="docs/screenshots/add-trip.jpg" width="280" alt="Добавление поездки">
-  <img src="docs/screenshots/day-comparison.jpg" width="280" alt="Сравнение с предыдущим днём">
+  <img src="docs/screenshots/mobile.jpg" width="240" alt="Сводка на телефоне">
+  <img src="docs/screenshots/add-trip.jpg" width="240" alt="Добавление поездки">
+  <img src="docs/screenshots/day-comparison.jpg" width="240" alt="Сравнение с предыдущим днём">
 </p>
 
 ## Что сделано
