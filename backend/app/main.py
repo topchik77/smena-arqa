@@ -106,8 +106,8 @@ def create_app(db_path: Path | str | None = None, web_path: Path | None = None) 
 
     @app.post("/api/v1/days/{selected_date}/insights", response_model=InsightsView, tags=["Insights"])
     def insights(selected_date: date) -> InsightsView:
-        snapshot = repository.day(selected_date)
-        return explain_with_optional_ai(snapshot, explain_day(snapshot))
+        snapshot, previous = repository.day_with_previous(selected_date)
+        return explain_with_optional_ai(snapshot, explain_day(snapshot, previous))
 
     # Keep unknown API paths as JSON 404s even when serving the Flutter build.
     @app.api_route("/api/{unknown_path:path}", methods=["GET", "POST", "PUT", "PATCH", "DELETE"])

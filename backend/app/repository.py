@@ -89,6 +89,36 @@ class TripRepository:
                 f"SELECT {COLUMNS} FROM trips WHERE local_date = ? ORDER BY start DESC, id",
                 (selected.isoformat(),),
             ).fetchall()
+        return self._day_from_rows(selected, rows)
+
+    def day_with_previous(self, selected: date) -> tuple[DayView, DayView | None]:
+        """Read selected day and latest earlier active day in one SQL snapshot.
+
+        A single statement keeps date selection, current totals and baseline
+        totals consistent even if another connection adds a trip during reading.
+        Empty calendar days and dates after the selection never become a baseline.
+        """
+        selected_key = selected.isoformat()
+        with closing(self.connect()) as connection:
+            rows = connection.execute(
+                f"""SELECT {COLUMNS} FROM trips
+                WHERE local_date = ? OR local_date = (
+                    SELECT MAX(local_date) FROM trips WHERE local_date < ?
+                )
+                ORDER BY local_date, start DESC, id""",
+                (selected_key, selected_key),
+            ).fetchall()
+        current_rows = [row for row in rows if row[6] == selected_key]
+        previous_rows = [row for row in rows if row[6] < selected_key]
+        previous = (
+            self._day_from_rows(date.fromisoformat(previous_rows[0][6]), previous_rows)
+            if previous_rows
+            else None
+        )
+        return self._day_from_rows(selected, current_rows), previous
+
+    @classmethod
+    def _day_from_rows(cls, selected: date, rows: list[sqlite3.Row]) -> DayView:
         revenue = sum(row[3] for row in rows)
         commission = sum(row[5] for row in rows)
         cash = sum(row[3] for row in rows if row[4] == "cash")
@@ -98,7 +128,7 @@ class TripRepository:
         minutes = sum(durations, timedelta()) // timedelta(minutes=1)
         return DayView(
             date=selected,
-            trips=[self.view(row) for row in rows],
+            trips=[cls.view(row) for row in rows],
             summary=Summary(
                 trip_count=len(rows),
                 revenue=money_text(revenue),

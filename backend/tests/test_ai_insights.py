@@ -115,7 +115,7 @@ def test_valid_selection_uses_exact_server_facts_and_only_aggregate_input(day, c
     assert result.text == local.text
     assert ai.AI_SCOPE in result.limitations
     assert local.source == "local"  # The deterministic baseline is not mutated.
-    assert len(local.facts) == 4
+    assert len(local.facts) == 3
     assert len(sent) == 1
     request = sent[0]
     assert str(request.url) == ai.API_URL
@@ -236,6 +236,7 @@ def test_cache_expires_and_remains_bounded(day, configured, monkeypatch):
 
     configured(handler)
     monkeypatch.setattr(ai, "MAX_CACHE_ENTRIES", 2)
+
     # Avoid replacing the time module shared with asyncio; replace ai's reference.
     class Clock:
         @staticmethod

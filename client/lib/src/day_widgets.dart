@@ -568,7 +568,7 @@ class InsightPanel extends StatelessWidget {
         const SizedBox(height: 13),
         if (insight == null) ...[
           const Text(
-            'Посмотрите, из чего сложился ваш результат.',
+            'Сравните заработок и средний доход за поездку с предыдущим днём с записями.',
             style: TextStyle(color: muted, fontSize: 13),
           ),
           if (error != null) ...[
@@ -617,7 +617,7 @@ class InsightPanel extends StatelessWidget {
           const SizedBox(height: 12),
           Text(
             insight!.title,
-            style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w500),
+            style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
           ),
           const SizedBox(height: 8),
           Text(insight!.text, style: const TextStyle(fontSize: 13)),

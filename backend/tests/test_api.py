@@ -214,9 +214,10 @@ def test_insights_are_grounded_and_honestly_labelled(client, official_trips):
     body = response.json()
     assert response.status_code == 200
     assert body["source"] == "local"
-    assert "3 315 ₸" in body["text"]
+    assert "Более ранних дней с поездками нет" in body["text"]
+    assert any("1 657,50 ₸" in fact for fact in body["facts"])
     assert any("15%" in fact for fact in body["facts"])
-    assert len(body["limitations"]) == 3
+    assert len(body["limitations"]) == 2
     assert client.post("/api/v1/days/2026-10-04/insights").json()["facts"] == []
 
 
